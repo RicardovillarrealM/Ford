@@ -13,10 +13,10 @@ export default function Header({ title, children }: Props) {
         <div className="bg-[#060357] flex items-right justify-between px-2 py-1 right">
                 <p className="ml-auto text-wrap text-xs text-white">Blvd. Felipe Ángeles 2307, Venta Prieta, 42083 Pachuca de Soto, Hgo. Mexico</p>
             </div>
-            <div className="bg-white shadow mt-6 mg-top-4">
-            
+            <div>
+              <img src="resources/assets/images/logoFord.jpg" alt=" logo Ford" className="mx-auto" />
 
         </div>
-    </header>
+    </header>   
   );
 }
