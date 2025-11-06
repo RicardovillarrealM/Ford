@@ -1,4 +1,5 @@
 import { Link } from '@inertiajs/react';
+import logoFord from '../../assets/images/logoFord.jpg';
 import React from 'react';
 import IconoHamburger from './IconoHamburger';
 type Props = {
@@ -27,11 +28,7 @@ export default function Header({ title, children }: Props) {
                         {/* Logo boton en la parte superior izquierda */}
                         <div className="flex items-center">
                             <Link href="#" className="inline-block">
-                                <img
-                                    src="/assets/images/logoFord.jpg"
-                                    alt="Ford logo"
-                                    className="h-10 w-auto object-contain"
-                                />
+                                                    <img src={logoFord} alt="Ford logo" className="h-10 w-auto object-contain" />
                             </Link>
                         </div>
                         {/* Texto al costado del logo */}
