@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from '../../css/NavBar.module.css';
+import SearchIcon from '@mui/icons-material/Search';
+
 
 const SearchBar = () => {
   const [value, setValue] = useState('');
@@ -23,7 +25,9 @@ const SearchBar = () => {
   }, [value]);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ position: 'relative' }}>
+      {/* Icono al costado izquierdo de la barra para simular la búsqueda */}
+      <SearchIcon style={{ position: 'absolute', left: 8, top: '50%', transform: 'translateY(-50%)', color: '#6B7280' }} />
       <input
         type="text"
         className={styles.textbox}
@@ -32,6 +36,7 @@ const SearchBar = () => {
         onChange={(e) => {
           setValue(e.target.value);
         }}
+        style={{ paddingLeft: 34 }}
       />
     </div>
   );
