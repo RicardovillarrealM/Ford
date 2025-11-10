@@ -71,47 +71,46 @@ export default function Header({ title, children }: Props) {
                         </div>
                     </div>
 
-                    {/*Bottom header */}
-                    <div className="row-start-2 ml-2 flex items-start">
-                        {/* Boton menu - Hamburger  */}
-                        <IconoHamburger />
-                        <div className="mb-5 ml-10 flex items-center">
+                    {/* Bottom header: left (hamburger + add), center (search), right (icons + user) */}
+                    <div className="ml-5 mr-5 grid-cols-4 row-start-2 flex items-center w-full">
+                        {/* Left cluster */}
+                        <div className="col-start-1 flex items-start space-x-4">
+                            <IconoHamburger />
+                        </div>
+                        <div className="col-start-2 ml-10 flex-2">    
                             <Link
                                 href="#"
                                 onClick={() => {
                                     console.info('Se agrego un vehiculo');
                                 }}
+                                className="inline-flex items-center px-3 py-1.5"
                             >
-                                {' '}
-                                {/*AQUI TIENE QUE IR EL ICONO DE AUTO */}
                                 Agregar Vehiculo
                             </Link>
                         </div>
-                        <div className="ml-50 flex items-start space-x-4">
+
+                        {/* Center: search takes available space */}
+                        <div className="col-center-3 flex-5">
                             <SearchBar />
                         </div>
-                        <div className="flex items-center gap-2">
-                            {' '}
-                            {/* Reducido gap */}
-                            {/* Reducido tamaño de botones/iconos */}
+
+                        {/* Right cluster: icons and user menu */}
+                        <div className="col-start-4 flex items-center space-x-1">
                             <Link href="/favoritos" className={ICON_BUTTON}>
                                 <Heart className={ICON_NAVY_24} />
                                 {wishlistItems.length > 0 && (
-                                    <span className={BADGE_COUNT}>
-                                        {wishlistItems.length}
-                                    </span>
+                                    <span className={BADGE_COUNT}>{wishlistItems.length}</span>
                                 )}
                             </Link>
+
                             <Link href="/carrito" className={ICON_BUTTON}>
                                 <ShoppingCart className={ICON_NAVY_24} />
                                 {cartItems.length > 0 && (
-                                    <span className={BADGE_COUNT}>
-                                        {cartItems.length}
-                                    </span>
+                                    <span className={BADGE_COUNT}>{cartItems.length}</span>
                                 )}
                             </Link>
-                            <UserMenu />{' '}
-                            {/* El tamaño del botón UserMenu se define dentro del componente */}
+
+                            <UserMenu />
                         </div>
                     </div>
                 </div>
