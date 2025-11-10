@@ -50,11 +50,11 @@ export default function Header({ title, children }: Props) {
     return (
         <header>
             <div className="items-right right flex justify-between bg-[#060357] px-2">
-                <p className="ml-auto text-xs text-wrap text-white">
+                <Link href="https://www.google.com.mx/maps/place/Ford+Zapata+Pachuca/@20.0775706,-98.7780583,15.62z/data=!4m6!3m5!1s0x85d1a0e90aeef109:0xa374cd507f73452!8m2!3d20.0810678!4d-98.7733602!16s%2Fg%2F1td8zgcx?entry=ttu&g_ep=EgoyMDI1MTEwNS4wIKXMDSoASAFQAw%3D%3D" className="ml-auto text-xs text-wrap text-white hover:underline text to-blue-600">
                     <MapIcon className="inline mr-1" />
                     Blvd. Felipe Ángeles 2307, Venta Prieta, 42083 Pachuca de
                     Soto, Hgo. Mexico
-                </p>
+                </Link>
             </div>
 
             {/*Parte blanca del Header */}
