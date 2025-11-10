@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { User, Settings, ShoppingBag, HelpCircle, LogOut, LogIn } from "lucide-react";
+import { Link } from '@inertiajs/react';
 
 
 // NOTE: `useAuth` is provided by the application's auth layer. We declare it here for
@@ -36,7 +36,6 @@ export default function UserMenu() {
     };
   }
   const menuRef = useRef<HTMLDivElement>(null);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -131,9 +130,11 @@ export default function UserMenu() {
                 </button>
 
                 <button
-                  onClick={() => {
+                    onClick={() => {
                     setIsOpen(false);
-                    navigate("/login");
+                    // Fallback navigation for development: use location change.
+                    // In production with Inertia you could replace this with Inertia.visit('/login')
+                    window.location.href = '/login';
                   }}
                   className="w-full h-14 px-4 flex items-center gap-4 hover:bg-gray-50 transition-colors"
                 >
