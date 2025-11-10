@@ -4,16 +4,16 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
 
-Route::get('/', function () {
-    return Inertia::render('welcome', [
+
+// RUTA ADICIONAL: permitir acceder directamente a /crear_cuenta
+Route::get('/crear_cuenta', function () {
+    return Inertia::render('crear_cuenta', [
         'canRegister' => Features::enabled(Features::registration()),
     ]);
-})->name('home');
+})->name('crear_cuenta');
 
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('dashboard', function () {
-        return Inertia::render('dashboard');
-    })->name('dashboard');
-});
 
-require __DIR__.'/settings.php';
+Route::get('/iniciar_sesion', function () {
+    return Inertia::render('iniciar_sesion');
+})->name('iniciar_sesion');
+
