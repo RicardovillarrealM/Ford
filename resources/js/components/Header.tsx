@@ -43,9 +43,12 @@ export default function Header({ title, children }: Props) {
     const wishlistCtx: any = useWishlist();
     const cartItems = cartCtx?.cartItems ?? cartCtx?.items ?? [];
     const wishlistItems = wishlistCtx?.wishlistItems ?? wishlistCtx?.items ?? [];
+    // NOTE: compact header adjustments
+    // This header version reduces vertical space (smaller top bar and reduced white header height).
+    // To expand again, edit the heights on the grid container below (h-16 / md:h-20 / lg:h-24).
     return (
         <header>
-            <div className="items-right right flex justify-between bg-[#060357] px-2 py-1">
+            <div className="items-right right flex justify-between bg-[#060357] px-2">
                 <p className="ml-auto text-xs text-wrap text-white">
                     <MapIcon className="inline mr-1" />
                     Blvd. Felipe Ángeles 2307, Venta Prieta, 42083 Pachuca de
@@ -56,49 +59,49 @@ export default function Header({ title, children }: Props) {
             {/*Parte blanca del Header */}
             <div className="bg-white shadow-md">
                 {/* CSS grid para dividir la parte blanca del header */}
-                <div className="grid h-24 max-w-7xl grid-rows-2 px-0 pl-2 md:h-28 lg:h-32">
+                <div className="grid h-16 max-w-7xl grid-rows-2 px-0 pl-2 md:h-16 lg:h-20">
                     {/* Top header */}
-                    <div className="row-start-1 flex items-start">
+                    <div className="row-start-1 flex items-center">
                         {/* Logo boton en la parte superior izquierda */}
                         <div className="flex items-center space-x-3">
                             <Link href="#" className="inline-block">
                                 <img
                                     src={logoFord}
                                     alt="Ford logo"
-                                    className="h-10 w-auto object-contain"
+                                    className="h-6 w-auto object-contain"
                                 />
                             </Link>
-                            <span className="text-md text-[#060357]">
+                            <span className="text-xs text-[#060357]">
                                 GRANDES PROMOCIONES Y LAS MEJORES REFACCIONES
                             </span>
                         </div>
                     </div>
 
                     {/* Bottom header: left (hamburger + add), center (search), right (icons + user) */}
-                    <div className="ml-5 mr-5 grid-cols-4 row-start-2 flex items-center w-full">
+                    <div className="row-start-2 flex items-center w-full px-8 gap-12">
                         {/* Left cluster */}
-                        <div className="col-start-1 flex items-start space-x-4">
+                        <div className="flex items-center space-x-4">
                             <IconoHamburger />
                         </div>
-                        <div className="col-start-2 ml-10 flex-2">    
+                        <div className="ml-16">
                             <Link
                                 href="#"
                                 onClick={() => {
                                     console.info('Se agrego un vehiculo');
                                 }}
-                                className="inline-flex items-center px-3 py-1.5"
+                                className="inline-flex items-center px-8 py-1 text-sm"
                             >
                                 Agregar Vehiculo
                             </Link>
                         </div>
 
                         {/* Center: search takes available space */}
-                        <div className="col-center-3 flex-5">
+                        <div className="ml-16 flex-1 mx-2">
                             <SearchBar />
                         </div>
 
                         {/* Right cluster: icons and user menu */}
-                        <div className="col-start-4 flex items-center space-x-1">
+                        <div className="flex items-center space-x-6 ml-5">
                             <Link href="/favoritos" className={ICON_BUTTON}>
                                 <Heart className={ICON_NAVY_24} />
                                 {wishlistItems.length > 0 && (
