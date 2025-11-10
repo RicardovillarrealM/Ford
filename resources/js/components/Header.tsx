@@ -89,7 +89,7 @@ export default function Header({ title, children }: Props) {
                                 onClick={() => {
                                     console.info('Se agrego un vehiculo');
                                 }}
-                                className="inline-flex items-center px-8 py-1 text-sm"
+                                className="inline-flex items-center px-3 py-1 text-sm whitespace-nowrap flex-shrink-0"
                             >
                                 Agregar Vehiculo
                             </Link>
