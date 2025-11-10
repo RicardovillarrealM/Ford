@@ -21,28 +21,24 @@ export default function Header({ title, children }: Props) {
             {/*Parte blanca del Header */}
             <div className="bg-white shadow-md">
                 {/* CSS grid para dividir la parte blanca del header */}
-                <div className="mx-auto grid h-24 max-w-7xl grid-rows-2 px-4 md:h-28 lg:h-32">
+                <div className="grid h-24 max-w-7xl grid-rows-2 px-0 md:h-28 lg:h-32 pl-2">
 
                     {/* Top header */}
                     <div className="row-start-1 flex items-start">
                         {/* Logo boton en la parte superior izquierda */}
-                        <div className="flex items-center">
+                        <div className="flex items-center space-x-3">
                             <Link href="#" className="inline-block">
-                                                    <img src={logoFord} alt="Ford logo" className="h-10 w-auto object-contain" />
+                                <img src={logoFord} alt="Ford logo" className="h-10 w-auto object-contain" />
                             </Link>
-                        </div>
-                        {/* Texto al costado del logo */}
-                        <div className="ml-auto flex items-start">
-                            <span className="text-sm text-[#060357]">
-                                {' '}
-                                GRANDES PROMOCIONES Y LAS MEJORES
-                                REFACCIONES{' '}
+                            <span className="text-md text-[#060357]">
+                                GRANDES PROMOCIONES Y LAS MEJORES REFACCIONES
                             </span>
                         </div>
+                    
                     </div>
 
                     {/*Bottom header */}
-                    <div className="row-start-2 flex items-center">
+                    <div className="row-start-2 flex items-start ml-2 ">
                       {/* Boton menu - Hamburger  */}
                       <IconoHamburger />
 
