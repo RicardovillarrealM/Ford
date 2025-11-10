@@ -8,6 +8,7 @@ import { useWishlist } from "@/contexts/WishListContext";
 import SearchBar from './SearchBar';
 import { Heart, ShoppingCart } from 'lucide-react';
 import MapIcon from '@mui/icons-material/Map';
+import DriveEtaIcon from '@mui/icons-material/DriveEta';
 
 
 //Tailwind clases reusables
@@ -91,6 +92,7 @@ export default function Header({ title, children }: Props) {
                                 }}
                                 className="inline-flex items-center px-3 py-1 text-sm whitespace-nowrap flex-shrink-0"
                             >
+                                <DriveEtaIcon className="mr-3" sx={{ color: '#060357' }} />
                                 Agregar Vehiculo
                             </Link>
                         </div>
