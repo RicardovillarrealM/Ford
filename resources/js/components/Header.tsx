@@ -1,6 +1,6 @@
 import { Link } from '@inertiajs/react';
-import logoFord from '../../assets/images/logoFord.jpg';
 import React from 'react';
+import logoFord from '../../assets/images/logoFord.jpg';
 import IconoHamburger from './IconoHamburger';
 type Props = {
     title?: string;
@@ -10,7 +10,6 @@ type Props = {
 export default function Header({ title, children }: Props) {
     return (
         <header>
-
             <div className="items-right right flex justify-between bg-[#060357] px-2 py-1">
                 <p className="ml-auto text-xs text-wrap text-white">
                     Blvd. Felipe Ángeles 2307, Venta Prieta, 42083 Pachuca de
@@ -21,27 +20,39 @@ export default function Header({ title, children }: Props) {
             {/*Parte blanca del Header */}
             <div className="bg-white shadow-md">
                 {/* CSS grid para dividir la parte blanca del header */}
-                <div className="grid h-24 max-w-7xl grid-rows-2 px-0 md:h-28 lg:h-32 pl-2">
-
+                <div className="grid h-24 max-w-7xl grid-rows-2 px-0 pl-2 md:h-28 lg:h-32">
                     {/* Top header */}
                     <div className="row-start-1 flex items-start">
                         {/* Logo boton en la parte superior izquierda */}
                         <div className="flex items-center space-x-3">
                             <Link href="#" className="inline-block">
-                                <img src={logoFord} alt="Ford logo" className="h-10 w-auto object-contain" />
+                                <img
+                                    src={logoFord}
+                                    alt="Ford logo"
+                                    className="h-10 w-auto object-contain"
+                                />
                             </Link>
                             <span className="text-md text-[#060357]">
                                 GRANDES PROMOCIONES Y LAS MEJORES REFACCIONES
                             </span>
                         </div>
-                    
                     </div>
 
                     {/*Bottom header */}
-                    <div className="row-start-2 flex items-start ml-2 ">
-                      {/* Boton menu - Hamburger  */}
-                      <IconoHamburger />
+                    <div className="row-start-2 ml-2 flex items-start">
+                        {/* Boton menu - Hamburger  */}
+                        <IconoHamburger />
+                        <div className="ml-10 mb-5 flex items-center">
+                            <Link
+                                href="#"
+                                onClick={() => {
+                                    console.info("Se agrego un vehiculo");
+                                }}
+                            > {/*AQUI TIENE QUE IR EL ICONO DE AUTO */}
+                                Agregar Vehiculo
+                            </Link>
 
+                        </div>
                     </div>
                 </div>
             </div>
