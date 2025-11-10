@@ -8,6 +8,8 @@ export default function Welcome({
     canRegister?: boolean;
 }) {
     const { auth } = usePage<SharedData>().props;
+    // Developer HMR demo string -- edit this text to test HMR in development
+    const DEV_HMR_NOTE = 'HMR: edita este texto en resources/js/pages/welcome.tsx para probar Hot Module Replacement';
 
     return (
         <>
@@ -171,6 +173,10 @@ export default function Welcome({
                                     fill="currentColor"
                                 />
                             </svg>
+                            {/* Notas de desarrollo visibles en "Welcome - Laravel" en el localhost:8000 */}
+                            <div className="pointer-events-none absolute bottom-3 left-3 rounded bg-white/80 px-2 py-1 text-xs text-[#ffffff] dark:bg-black/60 dark:text-[#ff0000]">
+                                {DEV_HMR_NOTE}
+                            </div>
                             <svg
                                 className="relative -mt-[4.9rem] -ml-8 w-[448px] max-w-none lg:-mt-[6.6rem] lg:ml-0 dark:hidden"
                                 viewBox="0 0 440 376"
