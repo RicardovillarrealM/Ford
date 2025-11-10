@@ -7,6 +7,8 @@ import { useCart } from "@/contexts/CartContext";
 import { useWishlist } from "@/contexts/WishListContext";
 import SearchBar from './SearchBar';
 import { Heart, ShoppingCart } from 'lucide-react';
+import MapIcon from '@mui/icons-material/Map';
+
 
 //Tailwind clases reusables
 
@@ -45,6 +47,7 @@ export default function Header({ title, children }: Props) {
         <header>
             <div className="items-right right flex justify-between bg-[#060357] px-2 py-1">
                 <p className="ml-auto text-xs text-wrap text-white">
+                    <MapIcon className="inline mr-1" />
                     Blvd. Felipe Ángeles 2307, Venta Prieta, 42083 Pachuca de
                     Soto, Hgo. Mexico
                 </p>
